@@ -1,0 +1,1549 @@
+/* =========================================================
+   QUIZNOVA - ADMIN LEADERBOARD
+   Complete AdminLeaderboard.css
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.admin-leaderboard-page {
+  min-height: 100vh;
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 38px 42px 60px;
+
+  background:
+    radial-gradient(
+      circle at 15% 5%,
+      rgba(0, 210, 255, 0.13),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(71, 112, 255, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #061521 0%,
+      #07263a 48%,
+      #041521 100%
+    );
+
+  color: #ffffff;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.admin-leaderboard-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+
+.admin-section-label {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+
+  color: #55e6ff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+.admin-leaderboard-header h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(34px, 4vw, 54px);
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -1.8px;
+}
+
+
+.admin-leaderboard-header p {
+  margin: 12px 0 0;
+
+  color: rgba(226, 245, 255, 0.68);
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.admin-leaderboard-refresh {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 120px;
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: 1px solid rgba(92, 226, 255, 0.30);
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 217, 255, 0.16),
+      rgba(0, 132, 255, 0.08)
+    );
+
+  color: #8cefff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.admin-leaderboard-refresh:hover {
+  transform: translateY(-2px);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 217, 255, 0.25),
+      rgba(0, 132, 255, 0.15)
+    );
+
+  border-color: rgba(92, 226, 255, 0.55);
+
+  box-shadow:
+    0 10px 30px rgba(0, 190, 255, 0.14);
+}
+
+
+.admin-leaderboard-refresh:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.admin-leaderboard-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 26px;
+}
+
+
+.admin-stat-card {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 21px;
+
+  border: 1px solid rgba(118, 225, 255, 0.13);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 103, 139, 0.31),
+      rgba(4, 40, 61, 0.54)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 12px 30px rgba(0, 0, 0, 0.12);
+
+  backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.admin-stat-card:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(94, 220, 255, 0.25);
+}
+
+
+.admin-stat-icon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    rgba(40, 205, 255, 0.10);
+
+  border:
+    1px solid rgba(91, 224, 255, 0.12);
+
+  font-size: 23px;
+}
+
+
+.admin-stat-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.admin-stat-label {
+  color: rgba(216, 244, 255, 0.58);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.admin-stat-content strong {
+  margin-top: 3px;
+
+  color: #ffffff;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  line-height: 1.15;
+}
+
+
+.admin-stat-content small {
+  margin-top: 5px;
+
+  color: rgba(218, 242, 255, 0.46);
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   MAIN RANKING CARD
+========================================================= */
+
+.admin-ranking-card {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(100, 219, 255, 0.14);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(9, 71, 98, 0.58),
+      rgba(3, 31, 49, 0.78)
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(16px);
+}
+
+
+/* =========================================================
+   RANKING HEADER
+========================================================= */
+
+.admin-ranking-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding: 28px 30px 24px;
+
+  border-bottom:
+    1px solid rgba(133, 229, 255, 0.08);
+}
+
+
+.ranking-kicker {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #5ce7ff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+
+.admin-ranking-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+
+.admin-ranking-header p {
+  margin: 7px 0 0;
+
+  color: rgba(221, 244, 255, 0.53);
+
+  font-size: 13px;
+}
+
+
+.ranking-result-count {
+  flex-shrink: 0;
+
+  min-width: 75px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 16px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(43, 201, 243, 0.08);
+
+  border:
+    1px solid rgba(73, 220, 255, 0.10);
+}
+
+
+.ranking-result-count strong {
+  color: #ffffff;
+
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+
+.ranking-result-count span {
+  margin-top: 4px;
+
+  color: rgba(207, 240, 252, 0.48);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.admin-leaderboard-filters {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 20px 30px;
+
+  border-bottom:
+    1px solid rgba(133, 229, 255, 0.07);
+}
+
+
+.admin-search-box {
+  flex: 1;
+
+  min-width: 180px;
+
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid rgba(104, 220, 255, 0.14);
+
+  border-radius: 11px;
+
+  background:
+    rgba(2, 31, 48, 0.55);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.admin-search-box:focus-within {
+  border-color:
+    rgba(79, 218, 255, 0.45);
+
+  box-shadow:
+    0 0 0 3px rgba(0, 201, 255, 0.07);
+}
+
+
+.admin-search-box span {
+  flex-shrink: 0;
+
+  color: #65e8ff;
+
+  font-size: 17px;
+}
+
+
+.admin-search-box input {
+  width: 100%;
+
+  min-width: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+}
+
+
+.admin-search-box input::placeholder {
+  color:
+    rgba(213, 239, 250, 0.38);
+}
+
+
+.admin-topic-filter {
+  width: 175px;
+
+  height: 45px;
+
+  padding: 0 13px;
+
+  border:
+    1px solid rgba(104, 220, 255, 0.14);
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background:
+    rgba(2, 31, 48, 0.70);
+
+  color: #dff9ff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+
+.admin-topic-filter:focus {
+  border-color:
+    rgba(79, 218, 255, 0.45);
+}
+
+
+.admin-topic-filter option {
+  background: #092638;
+
+  color: #ffffff;
+}
+
+
+.admin-clear-filter {
+  height: 45px;
+
+  padding: 0 15px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  border-radius: 11px;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  color: rgba(232, 248, 255, 0.72);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.admin-clear-filter:hover {
+  background:
+    rgba(255, 255, 255, 0.10);
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.admin-leaderboard-error {
+  margin: 24px 30px;
+
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  border:
+    1px solid rgba(255, 106, 106, 0.20);
+
+  border-radius: 13px;
+
+  background:
+    rgba(255, 75, 75, 0.07);
+}
+
+
+.admin-leaderboard-error strong {
+  display: block;
+
+  color: #ffabab;
+
+  font-size: 13px;
+}
+
+
+.admin-leaderboard-error span {
+  flex: 1;
+
+  color:
+    rgba(255, 220, 220, 0.60);
+
+  font-size: 12px;
+}
+
+
+.admin-leaderboard-error button {
+  flex-shrink: 0;
+
+  height: 36px;
+
+  padding: 0 13px;
+
+  border:
+    1px solid rgba(255, 115, 115, 0.25);
+
+  border-radius: 9px;
+
+  background:
+    rgba(255, 83, 83, 0.10);
+
+  color: #ffaaaa;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.admin-leaderboard-loading {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+
+  text-align: center;
+}
+
+
+.admin-loading-spinner {
+  width: 38px;
+  height: 38px;
+
+  margin-bottom: 18px;
+
+  border:
+    3px solid rgba(91, 222, 255, 0.16);
+
+  border-top-color:
+    #5de4ff;
+
+  border-radius: 50%;
+
+  animation:
+    adminSpin 0.8s linear infinite;
+}
+
+
+@keyframes adminSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.admin-leaderboard-loading h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+
+.admin-leaderboard-loading p {
+  margin: 7px 0 0;
+
+  color:
+    rgba(211, 239, 250, 0.45);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.admin-leaderboard-empty {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+
+  text-align: center;
+}
+
+
+.admin-empty-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 16px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(48, 207, 245, 0.08);
+
+  border:
+    1px solid rgba(72, 218, 255, 0.12);
+
+  font-size: 30px;
+}
+
+
+.admin-leaderboard-empty h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+}
+
+
+.admin-leaderboard-empty p {
+  max-width: 420px;
+
+  margin: 8px 0 0;
+
+  color:
+    rgba(211, 239, 250, 0.46);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+.admin-empty-clear {
+  margin-top: 17px;
+
+  height: 38px;
+
+  padding: 0 16px;
+
+  border:
+    1px solid rgba(90, 222, 255, 0.20);
+
+  border-radius: 9px;
+
+  background:
+    rgba(60, 214, 255, 0.08);
+
+  color: #7beaff;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.admin-ranking-table {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.admin-ranking-table-head {
+  min-width: 1080px;
+
+  display: grid;
+
+  grid-template-columns:
+    70px
+    minmax(220px, 1.6fr)
+    minmax(130px, 0.9fr)
+    minmax(105px, 0.8fr)
+    minmax(170px, 1.2fr)
+    100px
+    110px;
+
+  align-items: center;
+
+  padding: 14px 22px;
+
+  box-sizing: border-box;
+
+  background:
+    rgba(0, 15, 28, 0.25);
+
+  border-bottom:
+    1px solid rgba(133, 229, 255, 0.08);
+}
+
+
+.admin-ranking-table-head span {
+  color:
+    rgba(199, 235, 248, 0.43);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TABLE ROW
+========================================================= */
+
+.admin-ranking-row {
+  min-width: 1080px;
+
+  display: grid;
+
+  grid-template-columns:
+    70px
+    minmax(220px, 1.6fr)
+    minmax(130px, 0.9fr)
+    minmax(105px, 0.8fr)
+    minmax(170px, 1.2fr)
+    100px
+    110px;
+
+  align-items: center;
+
+  min-height: 82px;
+
+  padding: 11px 22px;
+
+  box-sizing: border-box;
+
+  border-bottom:
+    1px solid rgba(133, 229, 255, 0.055);
+
+  transition:
+    background 0.2s ease;
+}
+
+
+.admin-ranking-row:hover {
+  background:
+    rgba(54, 210, 245, 0.045);
+}
+
+
+.admin-ranking-row:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   RANK
+========================================================= */
+
+.admin-ranking-rank {
+  display: flex;
+
+  align-items: center;
+}
+
+
+.rank-medal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  font-size: 19px;
+}
+
+
+.rank-number {
+  width: 34px;
+
+  text-align: center;
+
+  color:
+    rgba(214, 239, 249, 0.54);
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   STUDENT
+========================================================= */
+
+.admin-ranking-student {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+
+.admin-student-avatar {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(73, 216, 255, 0.24),
+      rgba(48, 137, 255, 0.17)
+    );
+
+  border:
+    1px solid rgba(97, 224, 255, 0.16);
+
+  color: #8cecff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+.admin-ranking-student > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.admin-ranking-student strong {
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.admin-ranking-student small {
+  overflow: hidden;
+
+  margin-top: 4px;
+
+  color:
+    rgba(206, 235, 246, 0.42);
+
+  font-size: 10px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   TOPIC
+========================================================= */
+
+.admin-ranking-topic {
+  min-width: 0;
+}
+
+
+.topic-badge {
+  display: inline-flex;
+
+  max-width: 115px;
+
+  padding: 7px 10px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(83, 222, 255, 0.14);
+
+  border-radius: 8px;
+
+  background:
+    rgba(59, 210, 245, 0.08);
+
+  color: #83eaff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   SCORE
+========================================================= */
+
+.admin-ranking-score {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.admin-ranking-score strong {
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+.admin-ranking-score small {
+  margin-top: 4px;
+
+  color:
+    rgba(204, 235, 247, 0.39);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   PERCENTAGE
+========================================================= */
+
+.admin-ranking-percentage {
+  padding-right: 18px;
+}
+
+
+.percentage-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+}
+
+
+.percentage-top strong {
+  color: #8ceeff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+.admin-progress {
+  width: 100%;
+
+  height: 6px;
+
+  margin-top: 8px;
+
+  overflow: hidden;
+
+  border-radius: 99px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+
+.admin-progress-value {
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22c7ef,
+      #68eaff
+    );
+
+  box-shadow:
+    0 0 10px rgba(49, 217, 255, 0.25);
+
+  transition:
+    width 0.4s ease;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.admin-ranking-date {
+  color:
+    rgba(216, 240, 249, 0.54);
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   DELETE ACTION
+========================================================= */
+
+.admin-ranking-action {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  min-width: 110px;
+}
+
+
+/* MAIN DELETE BUTTON */
+
+.admin-delete-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  width: 96px;
+
+  height: 38px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid rgba(255, 104, 104, 0.28);
+
+  border-radius: 9px;
+
+  background:
+    rgba(255, 71, 71, 0.09);
+
+  color: #ff9999;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* DELETE HOVER */
+
+.admin-delete-button:hover {
+  background:
+    rgba(255, 65, 65, 0.18);
+
+  border-color:
+    rgba(255, 106, 106, 0.58);
+
+  color: #ffb4b4;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(255, 60, 60, 0.15);
+}
+
+
+/* DELETE CLICK */
+
+.admin-delete-button:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 8px rgba(255, 60, 60, 0.10);
+}
+
+
+/* DELETE FOCUS */
+
+.admin-delete-button:focus-visible {
+  outline: none;
+
+  border-color: #ff8d8d;
+
+  box-shadow:
+    0 0 0 3px rgba(255, 91, 91, 0.15);
+}
+
+
+/* DELETE DISABLED */
+
+.admin-delete-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.admin-ranking-table::-webkit-scrollbar {
+  height: 8px;
+}
+
+
+.admin-ranking-table::-webkit-scrollbar-track {
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+
+.admin-ranking-table::-webkit-scrollbar-thumb {
+  border-radius: 99px;
+
+  background:
+    rgba(82, 212, 242, 0.25);
+}
+
+
+.admin-ranking-table::-webkit-scrollbar-thumb:hover {
+  background:
+    rgba(82, 212, 242, 0.42);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .admin-leaderboard-page {
+    padding: 30px 24px 50px;
+  }
+
+
+  .admin-leaderboard-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .admin-ranking-card {
+    border-radius: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .admin-leaderboard-page {
+    padding: 22px 14px 40px;
+  }
+
+
+  .admin-leaderboard-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .admin-leaderboard-header h1 {
+    font-size: 34px;
+
+    letter-spacing: -1px;
+  }
+
+
+  .admin-leaderboard-header p {
+    font-size: 13px;
+  }
+
+
+  .admin-leaderboard-refresh {
+    width: 100%;
+  }
+
+
+  .admin-leaderboard-stats {
+    grid-template-columns:
+      1fr;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+  }
+
+
+  .admin-stat-card {
+    padding: 17px;
+  }
+
+
+  .admin-stat-content strong {
+    font-size: 25px;
+  }
+
+
+  .admin-ranking-header {
+    align-items: flex-start;
+
+    padding: 22px 18px 18px;
+  }
+
+
+  .admin-ranking-header h2 {
+    font-size: 21px;
+  }
+
+
+  .admin-ranking-header p {
+    font-size: 11px;
+  }
+
+
+  .ranking-result-count {
+    min-width: 58px;
+
+    padding: 10px;
+  }
+
+
+  .admin-leaderboard-filters {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    padding: 16px 18px;
+  }
+
+
+  .admin-search-box {
+    width: 100%;
+  }
+
+
+  .admin-topic-filter {
+    width: 100%;
+  }
+
+
+  .admin-clear-filter {
+    width: 100%;
+  }
+
+
+  .admin-leaderboard-error {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    margin: 18px;
+
+    padding: 16px;
+  }
+
+
+  .admin-leaderboard-error button {
+    width: 100%;
+  }
+
+
+  .admin-ranking-table-head,
+  .admin-ranking-row {
+    min-width: 1080px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .admin-leaderboard-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .admin-leaderboard-header h1 {
+    font-size: 30px;
+  }
+
+
+  .admin-section-label {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  .admin-stat-card {
+    gap: 12px;
+
+    padding: 15px;
+  }
+
+
+  .admin-stat-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 11px;
+
+    font-size: 20px;
+  }
+
+
+  .admin-stat-content strong {
+    font-size: 23px;
+  }
+
+
+  .admin-ranking-header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+
+  .admin-ranking-header h2 {
+    font-size: 19px;
+  }
+
+}

@@ -1,0 +1,868 @@
+/* =========================================================
+   QUIZNOVA PROFESSIONAL POPUP
+   DARK NAVY + CYAN GLOW + ORANGE WARNING
+========================================================= */
+
+.professional-popup-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 999999;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(0, 170, 255, 0.08),
+      transparent 45%
+    ),
+    rgba(1, 8, 20, 0.78);
+
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+
+  overflow-y: auto;
+
+  animation:
+    professionalOverlayIn
+    0.2s
+    ease-out;
+}
+
+
+/* =========================================================
+   MAIN POPUP
+========================================================= */
+
+.professional-popup {
+  position: relative;
+
+  width: min(770px, 100%);
+
+  margin-top: 0;
+
+  padding: 38px 40px 28px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 27, 50, 0.99),
+      rgba(7, 20, 39, 0.99)
+    );
+
+  border: 1px solid
+    rgba(77, 190, 255, 0.48);
+
+  box-shadow:
+    0 0 0 1px rgba(0, 115, 255, 0.12),
+    0 25px 80px rgba(0, 0, 0, 0.65),
+    0 0 45px rgba(0, 183, 255, 0.18);
+
+  color: #ffffff;
+
+  overflow: hidden;
+
+  animation:
+    professionalPopupIn
+    0.25s
+    cubic-bezier(
+      0.18,
+      0.85,
+      0.25,
+      1
+    );
+}
+
+
+/* =========================================================
+   BLUE BORDER GLOW
+========================================================= */
+
+.professional-popup::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 25px
+    rgba(0, 170, 255, 0.06);
+
+}
+
+
+/* =========================================================
+   TOP GLOW
+========================================================= */
+
+.professional-popup-top-glow {
+  position: absolute;
+
+  top: -130px;
+  left: 50%;
+
+  width: 420px;
+  height: 220px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(0, 183, 255, 0.16),
+      transparent 68%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ORANGE WARNING GLOW
+========================================================= */
+
+.professional-popup-warning::before {
+  content: "";
+
+  position: absolute;
+
+  top: -80px;
+  left: 75px;
+
+  width: 210px;
+  height: 180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 132, 25, 0.17),
+      transparent 68%
+    );
+
+  filter: blur(15px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.professional-popup-close {
+  position: absolute;
+
+  top: 19px;
+  right: 20px;
+
+  z-index: 5;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8496a9;
+
+  font-size: 35px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.professional-popup-close:hover {
+  color: #ffffff;
+
+  transform:
+    rotate(90deg)
+    scale(1.08);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.professional-popup-header {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding-right: 50px;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.professional-popup-icon {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: 92px;
+  height: 92px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 42px;
+  font-weight: 900;
+
+  border: 2px solid;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  z-index: 2;
+}
+
+
+/* Outer glow */
+
+.professional-popup-icon::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -9px;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    currentColor;
+
+  opacity: 0.18;
+
+  box-shadow:
+    0 0 25px currentColor;
+
+  pointer-events: none;
+}
+
+
+/* Small decorative dots */
+
+.professional-popup-icon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  top: -14px;
+  right: 8px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  box-shadow:
+    -65px 22px 0 currentColor,
+    48px 72px 0 currentColor;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   WARNING ICON
+========================================================= */
+
+.professional-popup-icon.warning {
+  color: #ffb51b;
+
+  border-color:
+    rgba(255, 158, 20, 0.65);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 157, 20, 0.16),
+      rgba(255, 119, 0, 0.03)
+    );
+
+  box-shadow:
+    0 0 30px
+    rgba(255, 139, 0, 0.18),
+    inset 0 0 20px
+    rgba(255, 139, 0, 0.06);
+}
+
+.warning-symbol {
+  width: 47px;
+  height: 47px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffd84d,
+      #ff9e00
+    );
+
+  color: #102033;
+
+  font-size: 35px;
+
+  font-weight: 1000;
+
+  clip-path: polygon(
+    50% 0%,
+    100% 100%,
+    0% 100%
+  );
+
+  padding-top: 8px;
+
+  filter:
+    drop-shadow(
+      0 5px 10px
+      rgba(255, 145, 0, 0.3)
+    );
+}
+
+
+/* =========================================================
+   SUCCESS ICON
+========================================================= */
+
+.professional-popup-icon.success {
+  color: #4de0b4;
+
+  border-color:
+    rgba(77, 224, 180, 0.45);
+
+  box-shadow:
+    0 0 30px
+    rgba(77, 224, 180, 0.15);
+}
+
+
+/* =========================================================
+   ERROR ICON
+========================================================= */
+
+.professional-popup-icon.error {
+  color: #ff6678;
+
+  border-color:
+    rgba(255, 75, 95, 0.5);
+
+  box-shadow:
+    0 0 30px
+    rgba(255, 75, 95, 0.18);
+}
+
+
+/* =========================================================
+   INFO ICON
+========================================================= */
+
+.professional-popup-icon.info {
+  color: #52d8ff;
+
+  border-color:
+    rgba(82, 216, 255, 0.5);
+
+  box-shadow:
+    0 0 30px
+    rgba(82, 216, 255, 0.16);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.professional-popup-heading {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.professional-popup-title {
+  position: relative;
+
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+
+.professional-popup-message {
+  position: relative;
+
+  margin: 0;
+
+  color: #e0e8f1;
+
+  font-size: 17px;
+
+  line-height: 1.55;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   WARNING BOX
+========================================================= */
+
+.professional-popup-warning-box {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 5px;
+
+  margin-top: 27px;
+
+  padding: 16px 18px;
+
+  border-radius: 11px;
+
+  background:
+    rgba(255, 139, 0, 0.055);
+
+  border: 1px solid
+    rgba(255, 145, 25, 0.48);
+
+  box-shadow:
+    inset 0 0 20px
+    rgba(255, 139, 0, 0.025),
+    0 0 18px
+    rgba(255, 119, 0, 0.04);
+}
+
+
+.professional-warning-title {
+  flex: 0 0 auto;
+
+  color: #ffad24;
+
+  font-size: 17px;
+
+  font-weight: 850;
+
+  line-height: 1.5;
+}
+
+
+.professional-warning-text {
+  color: #f0f3f7;
+
+  font-size: 16px;
+
+  line-height: 1.55;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.professional-popup-actions {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 25px;
+
+  padding-top: 21px;
+
+  border-top: 1px solid
+    rgba(94, 125, 155, 0.22);
+}
+
+
+/* =========================================================
+   BUTTON COMMON
+========================================================= */
+
+.professional-popup-cancel,
+.professional-popup-confirm {
+  min-width: 135px;
+
+  height: 56px;
+
+  padding: 0 23px;
+
+  border-radius: 13px;
+
+  font-size: 16px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.1px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.professional-popup-cancel {
+  border: 1px solid
+    rgba(111, 142, 177, 0.48);
+
+  background:
+    rgba(18, 34, 56, 0.72);
+
+  color: #e6edf5;
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.025);
+}
+
+
+.professional-popup-cancel:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(130, 163, 200, 0.7);
+
+  background:
+    rgba(27, 47, 73, 0.85);
+
+  box-shadow:
+    0 8px 22px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   CONFIRM
+========================================================= */
+
+.professional-popup-confirm {
+  border: none;
+
+  color: #ffffff;
+}
+
+
+/* Warning */
+
+.professional-popup-confirm.warning {
+  background:
+    linear-gradient(
+      135deg,
+      #ffae19 0%,
+      #ff5b43 52%,
+      #f32963 100%
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(255, 94, 54, 0.22),
+    0 0 22px
+    rgba(255, 119, 0, 0.11);
+}
+
+
+.professional-popup-confirm.warning:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 32px
+    rgba(255, 94, 54, 0.32),
+    0 0 28px
+    rgba(255, 119, 0, 0.17);
+}
+
+
+/* Success */
+
+.professional-popup-confirm.success {
+  background:
+    linear-gradient(
+      135deg,
+      #1ed6a0,
+      #0da978
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(20, 190, 145, 0.2);
+}
+
+
+/* Error */
+
+.professional-popup-confirm.error {
+  background:
+    linear-gradient(
+      135deg,
+      #ff6878,
+      #e52e4d
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(255, 70, 85, 0.22);
+}
+
+
+/* Info */
+
+.professional-popup-confirm.info {
+  background:
+    linear-gradient(
+      135deg,
+      #1acbff,
+      #3478ff
+    );
+
+  box-shadow:
+    0 10px 25px
+    rgba(25, 160, 255, 0.22);
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.professional-popup-cancel:active,
+.professional-popup-confirm:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.professional-popup button:focus-visible {
+  outline: 2px solid
+    rgba(70, 210, 255, 0.8);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes professionalOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes professionalPopupIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-18px)
+      scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .professional-popup-overlay {
+    align-items: center;
+
+    padding: 18px;
+  }
+
+  .professional-popup {
+    width: 100%;
+
+    padding:
+      32px 22px 22px;
+
+    border-radius: 18px;
+  }
+
+  .professional-popup-header {
+    gap: 17px;
+
+    padding-right: 35px;
+  }
+
+  .professional-popup-icon {
+    width: 68px;
+    height: 68px;
+
+    font-size: 30px;
+  }
+
+  .warning-symbol {
+    width: 37px;
+    height: 37px;
+
+    font-size: 28px;
+  }
+
+  .professional-popup-title {
+    font-size: 22px;
+
+    margin-bottom: 8px;
+  }
+
+  .professional-popup-message {
+    font-size: 14px;
+  }
+
+  .professional-popup-warning-box {
+    margin-top: 22px;
+
+    padding: 13px;
+
+    display: block;
+  }
+
+  .professional-warning-title {
+    display: inline;
+
+    font-size: 14px;
+  }
+
+  .professional-warning-text {
+    display: inline;
+
+    font-size: 14px;
+  }
+
+  .professional-popup-actions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+
+    margin-top: 20px;
+  }
+
+  .professional-popup-cancel,
+  .professional-popup-confirm {
+    width: 100%;
+
+    min-width: 0;
+
+    height: 50px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .professional-popup-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .professional-popup-icon {
+    width: 64px;
+    height: 64px;
+
+    margin-bottom: 3px;
+  }
+
+  .professional-popup-title {
+    font-size: 21px;
+  }
+
+  .professional-popup-close {
+    top: 12px;
+    right: 12px;
+  }
+}

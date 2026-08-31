@@ -1,0 +1,861 @@
+/* =====================================================
+   QUIZNOVA ADMIN LAYOUT
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.admin-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  background:
+    radial-gradient(
+      circle at 75% 15%,
+      rgba(0, 220, 255, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(20, 130, 220, 0.10),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #061525 0%,
+      #07283f 45%,
+      #063c56 100%
+    );
+
+  color: #ffffff;
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.admin-sidebar {
+  width: 270px;
+  min-width: 270px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px 18px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 20, 36, 0.98),
+      rgba(5, 31, 51, 0.98)
+    );
+
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    10px 0 40px
+    rgba(0, 0, 0, 0.18);
+
+  position: relative;
+
+  z-index: 10;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.admin-logo {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding:
+    0 10px 26px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* LOGO ICON */
+
+.admin-logo-icon {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5cecff,
+      #16b8dc
+    );
+
+  color: #ffffff;
+
+  font-size: 28px;
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 25px
+    rgba(38, 218, 245, 0.25);
+}
+
+
+/* LOGO TEXT */
+
+.admin-logo-text {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.admin-logo-text strong {
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+.admin-logo-text span {
+  margin-top: 5px;
+
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.admin-nav {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-top: 28px;
+}
+
+
+/* =====================================================
+   NAVIGATION ITEM
+===================================================== */
+
+.admin-nav-item {
+  width: 100%;
+  min-height: 56px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding:
+    0 16px;
+
+  border:
+    1px solid
+    transparent;
+
+  border-radius: 15px;
+
+  background: transparent;
+
+  color:
+    rgba(255, 255, 255, 0.74);
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =====================================================
+   NAV ICON
+===================================================== */
+
+.admin-nav-icon {
+  width: 30px;
+  min-width: 30px;
+
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+
+/* =====================================================
+   NAV LABEL
+===================================================== */
+
+.admin-nav-label {
+  flex: 1;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   NAV HOVER
+===================================================== */
+
+.admin-nav-item:hover {
+  color: #ffffff;
+
+  background:
+    rgba(61, 214, 239, 0.10);
+
+  border-color:
+    rgba(75, 220, 245, 0.16);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =====================================================
+   ACTIVE NAV ITEM
+===================================================== */
+
+.admin-nav-item.active {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(58, 216, 240, 0.95),
+      rgba(25, 169, 207, 0.88)
+    );
+
+  border-color:
+    rgba(128, 239, 255, 0.50);
+
+  box-shadow:
+    0 9px 25px
+    rgba(21, 192, 225, 0.20);
+
+  transform: none;
+}
+
+
+/* =====================================================
+   ACTIVE ICON
+===================================================== */
+
+.admin-nav-item.active .admin-nav-icon {
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   SIDEBAR BOTTOM
+===================================================== */
+
+.admin-sidebar-bottom {
+  width: 100%;
+
+  margin-top: auto;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* =====================================================
+   STUDENT VIEW BUTTON
+
+   IMPORTANT:
+   This button intentionally uses the SAME
+   dimensions/style as the navigation buttons.
+===================================================== */
+
+.admin-student-view {
+  width: 100%;
+  min-height: 56px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding:
+    0 16px;
+
+  margin: 0 0 16px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  border-radius: 15px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color:
+    rgba(255, 255, 255, 0.76);
+
+  font-family: inherit;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  outline: none;
+
+  appearance: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =====================================================
+   STUDENT VIEW HOVER
+===================================================== */
+
+.admin-student-view:hover {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(58, 216, 240, 0.95),
+      rgba(25, 169, 207, 0.88)
+    );
+
+  border-color:
+    rgba(128, 239, 255, 0.50);
+
+  box-shadow:
+    0 9px 25px
+    rgba(21, 192, 225, 0.20);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =====================================================
+   STUDENT VIEW ARROW
+===================================================== */
+
+.student-view-arrow {
+  margin-left: auto;
+
+  font-size: 19px;
+
+  opacity: 0.75;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.admin-student-view:hover
+.student-view-arrow {
+  transform:
+    translateX(4px);
+
+  opacity: 1;
+}
+
+
+/* =====================================================
+   ADMIN PROFILE
+===================================================== */
+
+.admin-profile {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding:
+    7px 6px 2px;
+}
+
+
+/* PROFILE AVATAR */
+
+.admin-profile-avatar {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #55e8ff,
+      #159fc9
+    );
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+
+/* PROFILE TEXT */
+
+.admin-profile-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.admin-profile-info strong {
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.admin-profile-info span {
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 10px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   MAIN AREA
+===================================================== */
+
+.admin-main {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(0, 220, 255, 0.09),
+      transparent 35%
+    );
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.admin-topbar {
+  width: 100%;
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding:
+    0 34px;
+
+  background:
+    rgba(4, 24, 42, 0.58);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  backdrop-filter:
+    blur(16px);
+}
+
+
+/* =====================================================
+   TOPBAR LEFT
+===================================================== */
+
+.admin-topbar-left {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.admin-topbar-label {
+  color:
+    #53e5fa;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.admin-topbar-title {
+  color:
+    rgba(255, 255, 255, 0.92);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   SYSTEM STATUS
+===================================================== */
+
+.admin-topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.admin-topbar-status {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    9px 13px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color:
+    rgba(255, 255, 255, 0.65);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* STATUS DOT */
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    #4be3a4;
+
+  box-shadow:
+    0 0 10px
+    rgba(75, 227, 164, 0.75);
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.admin-content {
+  flex: 1;
+
+  width: 100%;
+
+  padding:
+    34px;
+
+  overflow-x: hidden;
+
+  overflow-y: auto;
+}
+
+
+/* =====================================================
+   BUTTON FOCUS
+===================================================== */
+
+.admin-nav-item:focus-visible,
+.admin-student-view:focus-visible {
+  outline:
+    2px solid
+    #55e7ff;
+
+  outline-offset: 3px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .admin-sidebar {
+    width: 235px;
+    min-width: 235px;
+
+    padding:
+      22px 14px 18px;
+  }
+
+  .admin-logo {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .admin-logo-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+  }
+
+  .admin-logo-text strong {
+    font-size: 18px;
+  }
+
+  .admin-logo-text span {
+    font-size: 8px;
+  }
+
+  .admin-nav-item,
+  .admin-student-view {
+    min-height: 52px;
+
+    padding:
+      0 13px;
+
+    border-radius: 13px;
+  }
+
+  .admin-nav-label {
+    font-size: 14px;
+  }
+
+  .admin-content {
+    padding: 25px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .admin-layout {
+    flex-direction: column;
+  }
+
+
+  /* SIDEBAR */
+
+  .admin-sidebar {
+    width: 100%;
+    min-width: 100%;
+    min-height: auto;
+
+    padding: 15px;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+  }
+
+
+  /* LOGO */
+
+  .admin-logo {
+    padding-bottom: 17px;
+  }
+
+
+  /* NAV */
+
+  .admin-nav {
+    flex-direction: row;
+
+    gap: 7px;
+
+    margin-top: 17px;
+
+    overflow-x: auto;
+
+    padding-bottom: 4px;
+  }
+
+  .admin-nav-item {
+    width: auto;
+    min-width: 125px;
+
+    justify-content: center;
+  }
+
+
+  /* BOTTOM */
+
+  .admin-sidebar-bottom {
+    margin-top: 14px;
+
+    padding-top: 14px;
+  }
+
+
+  /* STUDENT VIEW */
+
+  .admin-student-view {
+    margin-bottom: 12px;
+
+    justify-content: center;
+  }
+
+
+  /* MAIN */
+
+  .admin-main {
+    min-height: auto;
+  }
+
+
+  /* TOPBAR */
+
+  .admin-topbar {
+    min-height: 65px;
+
+    padding:
+      0 18px;
+  }
+
+
+  /* CONTENT */
+
+  .admin-content {
+    padding:
+      18px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL SCREENS
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .admin-logo-text strong {
+    font-size: 17px;
+  }
+
+  .admin-nav-item {
+    min-width: 110px;
+  }
+
+  .admin-nav-label {
+    font-size: 13px;
+  }
+
+  .admin-topbar-status {
+    display: none;
+  }
+
+}
