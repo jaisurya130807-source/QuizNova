@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://quiznova-no7k.onrender.com";
 
 export default function Topics() {
   const [topics, setTopics] = useState([]);
