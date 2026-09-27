@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "https://quiznova-no7k.onrender.com",
+  baseURL: `${import.meta.env.VITE_API_URL || "https://quiznova-no7k.onrender.com"}/api`,
   timeout: 10000,
 });
 
